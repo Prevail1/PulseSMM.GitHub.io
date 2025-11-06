@@ -1,0 +1,155 @@
+/* Reset и базовые стили */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Inter", system-ui, sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Карточка визитки */
+.card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+  border: #fff solid 1px;
+}
+
+/* Анимация появления */
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Аватар */
+.avatar-wrap {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #6a85b6, #bac8e0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Имя и подпись */
+.name {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+.subtitle {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+/* Ссылки на соцсети */
+.links {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 16px; /* расстояние между кнопками */
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+}
+.link i {
+  font-size: 18px;
+}
+.link span {
+  display: block;
+  text-align: center;
+}
+
+.whatsapp {
+  background: rgba(37, 211, 102, 0.18);
+}
+.telegram {
+  background: rgba(0, 136, 204, 0.18);
+}
+.instagram {
+  background: rgba(225, 48, 108, 0.18);
+}
+
+/* Плавные эффекты наведения */
+.link:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(255, 255, 255, 0.18);
+}
+.link:active {
+  transform: translateY(0) scale(0.97);
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .avatar-wrap {
+    width: 140px;
+    height: 140px;
+  }
+  .name {
+    font-size: 26px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .links {
+    gap: 12px;
+  }
+  .link span {
+    font-size: 12px;
+  }
+}

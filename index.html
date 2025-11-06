@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>SKG Symantec — Визитка</title>
+    <meta
+      name="description"
+      content="SMM визитка: WhatsApp, Telegram, Instagram — SKG Symantec"
+    />
+    <link rel="preload" as="image" href="assets/prevail.jpg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.png" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome для иконок соцсетей -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Подключаем Three.js и Vanta.js для анимированного фона -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  </head>
+  <body>
+    <!-- Анимированный фон -->
+    <div id="vanta-bg" style="position: fixed; inset: 0; z-index: -2"></div>
+
+    <!-- Контент -->
+    <main class="card">
+      <div class="avatar-wrap" aria-label="Аватар">
+        <img
+          class="avatar"
+          src="assets/prevail.jpg"
+          alt="Аватар SKG Symantec"
+        />
+      </div>
+
+      <h1 class="name">Шепелев Ильгар</h1>
+      <p class="subtitle">SMM | Контент | Реклама</p>
+
+      <nav class="links" aria-label="Социальные ссылки">
+        <a
+          class="link whatsapp"
+          href="https://wa.me/77771404390"
+          target="_blank"
+          rel="noopener"
+          aria-label="Написать в WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <a
+          id="tgLink"
+          class="link telegram"
+          href="tg://resolve?phone=77771404390"
+          aria-label="Написать в Telegram"
+        >
+          <i class="fab fa-telegram-plane"></i>
+          <span>Telegram</span>
+        </a>
+
+        <a
+          class="link instagram"
+          href="https://www.instagram.com/skg.symantec"
+          target="_blank"
+          rel="noopener"
+          aria-label="Открыть Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+      </nav>
+    </main>
+
+    <script src="script.js"></script>
+
+    <!-- Инициализация Vanta.NET -->
+    <script>
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x06b6d4, // основной цвет сетки
+        backgroundColor: 0x000000, // чёрный фон
+        points: 12.0,
+        maxDistance: 25.0,
+        spacing: 20.0,
+      });
+    </script>
+  </body>
+</html>
